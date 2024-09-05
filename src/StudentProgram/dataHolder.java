@@ -1,16 +1,18 @@
+package StudentProgram;
+
 import javax.swing.*;
 
 public class dataHolder
 {
-    private static final int numberOfStudents = 10;
+    static final int numberOfStudents = 10;
 
 //    these are all parallel arrays to store the student details
-    private String[] studentNames = new String[numberOfStudents];
-    private String[] studentEmail = new String[numberOfStudents];
-    private int[] studentID = new int[numberOfStudents];
-    private int[] studentAge = new int[numberOfStudents];
-    private String[] studentCourse = new String[numberOfStudents];
-    private int studentCount = 0;
+    String[] studentNames = new String[numberOfStudents];
+    String[] studentEmail = new String[numberOfStudents];
+    int[] studentID = new int[numberOfStudents];
+    int[] studentAge = new int[numberOfStudents];
+    String[] studentCourse = new String[numberOfStudents];
+    int studentCount = 0;
 
 //    method to save a students details
     public void saveStudent(String name, String email, int ID, int age, String course)
@@ -57,7 +59,6 @@ public class dataHolder
         return false;
     }
 
-//    getters to get the inputted and saved details
     public String[] getStudentNames()
     {
         return studentNames;

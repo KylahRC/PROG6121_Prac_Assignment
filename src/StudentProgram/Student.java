@@ -1,3 +1,5 @@
+package StudentProgram;
+
 import java.util.Scanner;
 
 public class Student
@@ -7,38 +9,51 @@ public class Student
 
     public static void saveStudent()
     {
+        int studentID;
+        String studentName;
+        int studentAge;
+        String studentEmail;
+        String studentCourse;
         System.out.println("CAPTURE A NEW STUDENT");
         System.out.println("***************************************");
 
         System.out.print("Enter the student ID: ");
-        int studentID = scanner.nextInt();
+        studentID = scanner.nextInt();
         scanner.nextLine();
 
         System.out.print("Enter the student name: ");
-        String studentName = scanner.nextLine();
+        studentName = scanner.nextLine();
 
-        System.out.print("Enter the student age (>16y/o): ");
-        int studentAge = scanner.nextInt();
-        scanner.nextLine();
 
-        if (studentAge < 16)
+        while (true)
         {
-            System.out.println("You have entered an incorrect student age!!!");
-            return;
+            System.out.print("Enter the student age (>16y/o): ");
+            studentAge = scanner.nextInt();
+            scanner.nextLine();
+            if (studentAge > 15)
+            {
+                break;
+            }
+            else
+            {
+                System.out.println("You have entered an incorrect student age!!!");
+            }
         }
 
+
         System.out.print("Enter the student's email: ");
-        String studentEmail = scanner.nextLine();
+        studentEmail = scanner.nextLine();
 
         System.out.print("Enter the student's course: ");
-        String studentCourse = scanner.nextLine();
+        studentCourse = scanner.nextLine();
 
         dataHolder.saveStudent(studentName, studentEmail, studentID, studentAge, studentCourse);
         System.out.println("Student was added to the system!");
+        System.out.println("***************************************");
 
         System.out.println("Enter (1) to launch the menu or any other key to exit");
         int afterSaveMenuSelection = scanner.nextInt();
-
+        System.out.println("---------------------------------------");
         switch (afterSaveMenuSelection)
         {
             case 1:
@@ -51,7 +66,7 @@ public class Student
 
     public static void searchStudent()
     {
-        System.out.print("Enter the student id to search: ");
+        System.out.println("Enter the student id to search: ");
         System.out.println("---------------------------------------");
         int ID = scanner.nextInt();
         scanner.nextLine();
@@ -80,6 +95,7 @@ public class Student
         System.out.println("---------------------------------------");
         System.out.println("Enter (1) to launch the menu or any other key to exit");
         int afterSearchMenuSelection = scanner.nextInt();
+        System.out.println("---------------------------------------");
 
         switch (afterSearchMenuSelection)
         {
@@ -93,7 +109,7 @@ public class Student
 
     public static void deleteStudent()
     {
-        System.out.print("Enter the student's ID to delete: ");
+        System.out.println("Enter the student's ID to delete: ");
         int ID = scanner.nextInt();
         scanner.nextLine();
         int[] studentIDs = dataHolder.getStudentID();
@@ -120,8 +136,7 @@ public class Student
                         System.out.println("Deletion canceled!");
                         break;
                 }
-            }
-            else
+            } else
             {
                 System.out.println("Student not found.");
             }
@@ -130,6 +145,7 @@ public class Student
         System.out.println("---------------------------------------");
         System.out.println("Enter (1) to launch the menu or any other key to exit");
         int afterDeleteMenuSelection = scanner.nextInt();
+        System.out.println("---------------------------------------");
 
         switch (afterDeleteMenuSelection)
         {
@@ -169,6 +185,7 @@ public class Student
 
         System.out.println("Enter (1) to launch the menu or any other key to exit");
         int afterReportMenuSelection = scanner.nextInt();
+        System.out.println("---------------------------------------");
 
         switch (afterReportMenuSelection)
         {

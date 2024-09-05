@@ -1,3 +1,5 @@
+package StudentProgram;
+
 import java.util.Scanner;
 
 public class runApp
@@ -6,6 +8,7 @@ public class runApp
 
     public static void main(String[] args)
     {
+        System.out.println("***************************************");
         System.out.println("STUDENT MANAGEMENT APPLICATION");
         System.out.println("***************************************");
         System.out.println("Enter (1) to launch menu or any other key to exit");
