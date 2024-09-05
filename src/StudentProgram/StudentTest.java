@@ -185,5 +185,67 @@ class StudentTest
         System.out.println("\n***************************************");
     }
 
+    @Test
+    void TestStudentAge_StudentAgeValid()
+    {
+        System.out.println("Test the age validation system if age is valid");
+        System.out.println("***************************************\n");
 
+        int ageEntered = 21;
+            String expected = "Age valid";
+            String output = null;
+
+            if (ageEntered > 15)
+            {
+                output = "Age valid";
+            }
+            else
+            {
+                output = "You have entered an incorrect student age!!!";
+            }
+
+
+        assertEquals(expected, output);
+        System.out.println("Expected result:");
+        System.out.println(expected);
+        System.out.println(" ");
+        System.out.println("Output recieved:");
+        System.out.println(output);
+        System.out.println("\n***************************************");
+    }
+
+    @Test
+    void TestStudentAge_StudentAgeInvalid()
+    {
+        System.out.println("Test the age validation system if age is invalid");
+        System.out.println("***************************************\n");
+
+        int ageEntered = 12;
+        String expected = "You have entered an incorrect student age!!!";
+        String output = null;
+
+        if (ageEntered > 15)
+        {
+            output = "Age valid";
+        }
+        else
+        {
+            output = "You have entered an incorrect student age!!!";
+        }
+
+
+        assertEquals(expected, output);
+        System.out.println("Expected result:");
+        System.out.println(expected);
+        System.out.println(" ");
+        System.out.println("Output recieved:");
+        System.out.println(output);
+        System.out.println("\n***************************************");
+    }
+
+    @Test
+    void TestStudentAge_StudentAgeInvalidCharacter()
+    {
+
+    }
 }
