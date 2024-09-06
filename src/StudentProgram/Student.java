@@ -7,6 +7,7 @@ public class Student
     private static Scanner scanner = new Scanner(System.in);
     private static dataHolder dataHolder = new dataHolder();
 
+//    method to input data of student to be saved
     public static void saveStudent()
     {
         int studentID;
@@ -24,7 +25,7 @@ public class Student
         System.out.print("Enter the student name: ");
         studentName = scanner.nextLine();
 
-
+//        Loop for age entering I got from a friend
         while (true)
         {
             System.out.print("Enter the student age (>16y/o): ");
@@ -47,6 +48,7 @@ public class Student
         System.out.print("Enter the student's course: ");
         studentCourse = scanner.nextLine();
 
+//        where data is written to the arrray
         dataHolder.saveStudent(studentName, studentEmail, studentID, studentAge, studentCourse);
         System.out.println("Student was added to the system!");
         System.out.println("***************************************");
@@ -64,6 +66,7 @@ public class Student
         }
     }
 
+//    method to search a student by their ID
     public static void searchStudent()
     {
         System.out.println("Enter the student id to search: ");
@@ -73,6 +76,7 @@ public class Student
         int[] studentIDs = dataHolder.getStudentID();
         int count = dataHolder.getStudentCount();
 
+//        look for and display details
         boolean found = false;
         for (int i = 0; i < count; i++)
         {
@@ -107,6 +111,7 @@ public class Student
         }
     }
 
+//    method to delete a students details from the system
     public static void deleteStudent()
     {
         System.out.println("Enter the student's ID to delete: ");
@@ -116,6 +121,7 @@ public class Student
         int count = dataHolder.getStudentCount();
         System.out.println("---------------------------------------");
 
+//        gotta make sure the student they're looking for does exist
         for (int i = 0; i < count; i++)
         {
             if (studentIDs[i] == ID)
@@ -157,6 +163,7 @@ public class Student
         }
     }
 
+//    method to display all the details at once
     public static void studentReport()
     {
         String[] names = dataHolder.getStudentNames();
@@ -197,6 +204,7 @@ public class Student
         }
     }
 
+//    method to exit the program
     public static void exitStudentApplication()
     {
         System.out.println("Exiting the application.");

@@ -59,6 +59,7 @@ public class dataHolder
         return false;
     }
 
+//    obligatory getters
     public String[] getStudentNames()
     {
         return studentNames;

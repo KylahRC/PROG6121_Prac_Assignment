@@ -14,6 +14,8 @@ public class runApp
         System.out.println("Enter (1) to launch menu or any other key to exit");
         int firstMenuSelection = scanner.nextInt();
 
+//        they wanted a separate menu to launch the main menu
+//        I won't question their desires
         switch (firstMenuSelection)
         {
             case 1:
@@ -26,6 +28,7 @@ public class runApp
         }
     }
 
+//    the main menu
     public static void mainMenu()
     {
         System.out.println("Please select one of the following menu items:");
@@ -38,6 +41,7 @@ public class runApp
         int mainMenuSelection = scanner.nextInt();
         scanner.nextLine();
 
+//        my switch for choosing the thing you want to do
         switch (mainMenuSelection)
         {
             case 1:

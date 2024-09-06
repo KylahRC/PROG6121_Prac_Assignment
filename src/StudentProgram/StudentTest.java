@@ -1,10 +1,6 @@
 package StudentProgram;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.Scanner;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest
@@ -23,6 +19,7 @@ class StudentTest
     String studentEmail = "email";
     String studentCourse = "disd";
 
+//    test to see if the students are actually saved or not
     @Test
     void TestSaveStudent()
     {
@@ -47,6 +44,7 @@ class StudentTest
 
     }
 
+//    test to see if the search method actually works
     @Test
     void TestSearchStudent()
     {
@@ -84,6 +82,7 @@ class StudentTest
         System.out.println("\n***************************************");
     }
 
+//    test to see what happens if the ID searched doesn't exist
     @Test
     void TestSearchStudent_StudentNotFound()
     {
@@ -114,7 +113,9 @@ class StudentTest
 
     }
 
-
+//    test to see if deleting a student actually works
+//    it worked so well that it actually messed with my other tests at one point
+//    I am both proud and scared
     @Test
     void TestDeleteStudent()
     {
@@ -157,6 +158,7 @@ class StudentTest
         System.out.println("\n***************************************");
     }
 
+//    test to see what happens when a student isn't found to delete
     @Test
     void TestDeleteStudent_StudentNotFound()
     {
@@ -185,6 +187,7 @@ class StudentTest
         System.out.println("\n***************************************");
     }
 
+//    tests what happens when the age is valid
     @Test
     void TestStudentAge_StudentAgeValid()
     {
@@ -192,43 +195,13 @@ class StudentTest
         System.out.println("***************************************\n");
 
         int ageEntered = 21;
-            String expected = "Age valid";
-            String output = null;
-
-            if (ageEntered > 15)
-            {
-                output = "Age valid";
-            }
-            else
-            {
-                output = "You have entered an incorrect student age!!!";
-            }
-
-
-        assertEquals(expected, output);
-        System.out.println("Expected result:");
-        System.out.println(expected);
-        System.out.println(" ");
-        System.out.println("Output recieved:");
-        System.out.println(output);
-        System.out.println("\n***************************************");
-    }
-
-    @Test
-    void TestStudentAge_StudentAgeInvalid()
-    {
-        System.out.println("Test the age validation system if age is invalid");
-        System.out.println("***************************************\n");
-
-        int ageEntered = 12;
-        String expected = "You have entered an incorrect student age!!!";
+        String expected = "Age valid";
         String output = null;
 
         if (ageEntered > 15)
         {
             output = "Age valid";
-        }
-        else
+        } else
         {
             output = "You have entered an incorrect student age!!!";
         }
@@ -243,6 +216,37 @@ class StudentTest
         System.out.println("\n***************************************");
     }
 
+//    test what happens if the age isn't valid
+    @Test
+    void TestStudentAge_StudentAgeInvalid()
+    {
+        System.out.println("Test the age validation system if age is invalid");
+        System.out.println("***************************************\n");
+
+        int ageEntered = 12;
+        String expected = "You have entered an incorrect student age!!!";
+        String output = null;
+
+        if (ageEntered > 15)
+        {
+            output = "Age valid";
+        } else
+        {
+            output = "You have entered an incorrect student age!!!";
+        }
+
+
+        assertEquals(expected, output);
+        System.out.println("Expected result:");
+        System.out.println(expected);
+        System.out.println(" ");
+        System.out.println("Output recieved:");
+        System.out.println(output);
+        System.out.println("\n***************************************");
+    }
+
+//    supposed to be test for when the user enters a word instead of an int for age
+//    as you can see, it is empty
     @Test
     void TestStudentAge_StudentAgeInvalidCharacter()
     {
